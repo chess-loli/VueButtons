@@ -82,6 +82,9 @@ Vue.component('mastermind', {
                 this.attempts.push([this.attemptNumber, this.solution, this.pins])
             }
             this.pins = []
+            if (this.solution.join() === this.code.join()) {
+                return alert('you won')
+            }
             if (this.attemptNumber > 12) {
                 return alert('you lost this round')
             }
